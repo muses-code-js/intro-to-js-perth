@@ -1,0 +1,100 @@
+<html>
+
+<head>
+  <!--We're importing some of the generic styles from the last lesson.-->
+  <link rel="stylesheet"
+    href="./style.css">
+  </style>
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 6 - Triggering Changes in Javascript</h1>
+  <div class="info">
+    It's not very interesting to have JavaScript make changes when the page loads. Luckily, we can tie these changes to
+    be triggered by events on the page, like a button being clicked by the user.
+  </div>
+  <div class="dotted-div">
+    <h2>Task 1: Functions</h2>
+    <div class="info">A function is a small bit of code that repeats the same action when called.</div>
+    <p>Update the <code>helloWorld()</code> function so that the pop up message says "hello world", rather than "Update
+      this message!"</p><button id="button-1">Run Hello World Function</button>
+  </div>
+  <div class="dotted-div">
+    <h2>Task 2: Updating content on the page</h2>
+    <div class="info">You can use code like this
+      <code>document.querySelector("#my-element").innerHTML = 'example'</code> to
+      update content on a webpage.</div>
+    <p>Update the function to print "Hello World" to the 'update-text' paragraph</p>
+    <p>Add a function to '#clear-text-button' that removes the message from 'update-text'</p>
+    <p id="update-text"></p>
+    <button id="add-text-button">Add some text</button>
+    <button id="clear-text-button">Clear the text</button>
+  </div>
+  <div class="dotted-div"
+    id="task-3">
+    <h2>Task 3: Connecting functions to buttons</h2>
+    <div class="info">Functions won't run unless they are called, or triggered by an event like pressing a button. You
+      can use JavaScript to connect buttons to functions.</div>
+    <p>Update the button in task 4 (<code>document.querySelector("#WHERE-IS-THE-BUTTON")</code>) so that it's connected
+      to
+      #button-3
+      below.</p>
+    <p id="update-text"></p><button id="button-3">Click me !</button>
+  </div>
+
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>
+        I understand what a function is.
+      </li>
+      <li>
+        I can edit a function and make it do different things.
+      </li>
+      <li>
+        I can make a function run when a button is pressed.
+      </li>
+    </ul>
+  </div>
+  <a href="./lesson-5.html">
+    Previous
+    Lesson</a>
+  |
+  <a href="./lesson-7.html">Next Lesson>
+  </a>
+</body>
+
+<script>
+  /*** TASK 1 ***/
+  function helloWorld() {
+    /*TODO: Update message to say 'hello world'*/
+    alert("Update this message!")
+  }
+  document.querySelector("#button-1").onclick = helloWorld;
+
+
+
+  /*** TODO: TASK 2 ***/
+  function updateTextFunction() {
+    document.querySelector("#update-text").innerHTML = "update this text to have your message!";
+  }
+
+  function clearText() {
+    //TODO: update 'updateText' to be an empty string of text;
+  }
+
+  document.querySelector("#add-text-button").onclick = updateTextFunction;
+  document.querySelector("#clear-text-button").onclick = clearText;
+
+
+  /*** TASK 3 ***/
+  function coolFunction() {
+    document.querySelector("#task-3").style.backgroundColor = "hsl(0, 25%, 80%)";
+  }
+
+  //TODO: Update the query selector to find #button-4, so the function will work properly. 
+  document.querySelector("#WHERE-IS-THE-BUTTON").onclick = coolFunction;
+</script>
+
+</html>

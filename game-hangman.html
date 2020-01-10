@@ -1,0 +1,191 @@
+<html>
+
+<head>
+  <link rel="stylesheet"
+    href="./style.css">
+  </link>
+  <style>
+    #alphabet {
+      text-align: center;
+      background-color: hsl(0, 0%, 80%);
+    }
+
+    button {
+      margin: 5px;
+    }
+
+    #lives {
+      padding: 50px;
+      text-align: center;
+    }
+
+    #word {
+      margin: auto;
+      padding: 50px;
+      text-align: center;
+      background-color: beige;
+    }
+
+    #word span {
+      margin: 10px;
+      border-bottom: 2px solid black;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .wrapper {
+      background-color: hsl(0, 0%, 90%);
+      width: 40%;
+      overflow: hidden;
+      float: right;
+    }
+
+    .tasks {
+      width: 55%;
+      float: left;
+    }
+  </style>
+
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Hangman</h1>
+  <div class="tasks">
+    <div class="dotted-div">
+      <h2>Task 1: Lose lives for wrong guesses</h2>
+      <p>Currently, if you guess the wrong letter, you just get a pop up which says "BOO!"</p>
+      <p>We should subtract a life each time a wrong guess is made, and show less hearts on the game page.</p>
+    </div>
+
+    <div class="dotted-div">
+      <h2>Task 2: Show Correct Letters</h2>
+      <p>
+        Currently, the letters are all displayed to the user - so, it's not much of a game. Can you hide letters to the
+        user, unless they've guessed them correctly?</p>
+    </div>
+
+    <div class="dotted-div">
+      <h2>Task 3: Make all the alphabet buttons work</h2>
+      <p>Only the first six letter buttons of the alphabet work. Is there a way to easily connect all the buttons to the
+        checkLetter function?</p>
+    </div>
+
+    <div class="dotted-div">
+      <h2>Task 4: Disable Guessed Letters</h2>
+      <p>After you've clicked on a letter, the button should become disabled, so the user can't guess it again.</p>
+    </div>
+
+    <div class="dotted-div">
+      <h2>Task 5: The end of the game</h2>
+      <p>Can you create some kind of notification for when the game has finsihed (either the user has guess the correct
+        word or run out of lives)?
+      </p>
+      <p>This can be a popup, a message on the game board, or some other event.</p>
+    </div>
+
+    <div class="dotted-div">
+      <h2>Task 6: Styling</h2>
+      <p>The game's syling is pretty boring. Can you update the CSS so it looks a bit nicer?</p>
+    </div>
+  </div>
+  <div class="wrapper">
+    <h3 id="lives"></h3>
+
+    <div id="word">
+    </div>
+
+    <div id="alphabet">
+      <button id="A">A</button>
+      <button id="B">B</button>
+      <button id="C">C</button>
+      <button id="D">D</button>
+      <button id="E">E</button>
+      <button id="F">F</button>
+      <br />
+      <!--These buttons don't work yet :( -->
+      <button>G</button>
+      <button>H</button>
+      <button>I</button>
+      <button>J</button>
+      <button>K</button>
+      <button>L</button>
+      <button>M</button>
+      <button>N</button>
+      <button>O</button>
+      <button>P</button>
+      <button>Q</button>
+      <button>R</button>
+      <button>S</button>
+      <button>T</button>
+      <button>U</button>
+      <button>V</button>
+      <button>W</button>
+      <button>X</button>
+      <button>Y</button>
+      <button>Z</button>
+
+
+    </div>
+
+
+  </div>
+
+  </div>
+</body>
+
+</html>
+
+<script>
+  const word = ['C', 'A', 'B'];
+
+
+  let livesRemaining = 7;
+
+  document.querySelector("#lives").innerHTML = "❤❤❤❤❤❤❤"
+
+  let wordDiv = document.querySelector("#word");
+  for (let i = 0; i < word.length; i++) {
+    let letter = document.createElement("span");
+    letter.innerHTML = word[i];
+    wordDiv.appendChild(letter);
+  }
+
+
+  function checkLetter(event) {
+    let letter = event.target.innerHTML; //What letter is inside the button that was pressed?
+
+    //TODO: Can we change the style of the button we just clicked? 
+
+    let letterFound = false;
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] == letter) {
+        letterFound = true;
+      }
+    }
+    if (letterFound) {
+      //TODO: Show this letter on the page
+      alert("YAY!");
+    } else {
+      alert("BOO!");
+      //TODO: take away a life for each incorrect guess
+
+      //TODO: change 'backgroundPositionX' based on how many incorrect guesses
+      //have been made. 
+    }
+  }
+
+  document.querySelector("#A").onclick = checkLetter;
+  document.querySelector("#B").onclick = checkLetter;
+  document.querySelector("#C").onclick = checkLetter;
+  document.querySelector("#D").onclick = checkLetter;
+  document.querySelector("#E").onclick = checkLetter;
+  document.querySelector("#F").onclick = checkLetter;
+
+  //TODO: Typing out functions for all the letters like this will take ages. 
+  // Is there a quicker way to do it? 
+  // HINT: the following function will fetch all the alphabet buttons and put them in an array. 
+  let allButtons = document.querySelectorAll("#alphabet button");
+
+
+</script>

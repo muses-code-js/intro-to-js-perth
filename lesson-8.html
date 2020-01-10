@@ -1,0 +1,111 @@
+<html>
+
+<head>
+  <!--We're importing some of the generic styles from the last lesson.-->
+  <link rel="stylesheet"
+    href="./style.css">
+  </link>
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 8 - Loops</h1>
+  <div class="info">A loop allows you to repeat an action a certain amount of times.</div>
+
+  <div class="dotted-div"
+    id="task-1">
+    <h2>Task 1: Loops</h2>
+    <p>Update the loop in the "runTheLoop" function to repeat 10 times, instead of once</p>
+    <button id="button-1">Click me !</button>
+  </div>
+
+  <div class="dotted-div"
+    id="task-a">
+    <h2>Task 2: Changing content within a loop</h2>
+    <p>Update the loop so that it prints how many times it's run, e.g.: "the loop has run 0 times, the loop has run 1
+      times, the loop has run 2 times"</p>
+    <div id="loop-output"></div>
+    <button id="button-2">Click me !</button>
+  </div>
+
+
+  <div class="dotted-div"
+    id="task-3">
+    <h2>Task 3: Looping through an array of elements</h2>
+    <div class="info">You can loop through an array of elements. </div>
+    For this task, update the <code>dynamicLoop() </code> function so that each item in the to do list is printed.
+    Currently, it will just print the first item out over and over again.
+    <ul id="todo-list">
+
+    </ul>
+    <button id="button-3">Print to do list!</button>
+  </div>
+
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>
+        I understand what a loop is.
+      </li>
+      <li>
+        I can use a loop to print different numbers.
+      </li>
+      <li>
+        I can use a loop to access items in an array using the index of the loop.
+      </li>
+    </ul>
+  </div>
+
+
+  <a href="./lesson-7.html">Previous Lesson</a> |
+  <a href="./lesson-9.html">Next Lesson</a>
+</body>
+
+</html>
+
+<script>
+  /*** TASK 1 ***/
+  let loopElementWrapper = document.querySelector("#task-1");
+  function runTheLoop() {
+    /*TODO: Update 0 to be 10 - this will make the loop repeat 10 times*/
+    for (let i = 0; i < 1; i++) {
+      loopElementWrapper.append("💚");
+    }
+  }
+
+  let loopButton = document.querySelector("#button-1");
+  loopButton.onclick = runTheLoop;
+
+  /*** TASK 2 ***/
+  let countingLoopWrapper = document.querySelector("#loop-output");
+  function runCountingLoop() {
+    for (let index = 0; index < 5; index++) {
+      let p = document.createElement("p");
+      //TODO: Update '0' to be 'index'. This will make the loop print out how many times
+      //it has run. 
+      p.innerHTML = `This loop has run ${0} times.`;
+      countingLoopWrapper.appendChild(p);
+    }
+  }
+
+  let countingButton = document.querySelector("#button-2");
+  countingButton.onclick = runCountingLoop;
+
+  // /*** TASK 3 ***/
+
+  function dynamicLoop() {
+    let tasks = ['Buy milk', 'Do laundry', 'Clean room'];
+    let todoList = document.querySelector("#todo-list");
+    console.log(todoList);
+    for (let index = 0; index < tasks.length; index++) {
+      let item = document.createElement('li');
+
+      //TODO: Update the task[0] so it prints out each element in the array 
+      item.innerHTML = tasks[0]
+      todoList.appendChild(item);
+    }
+  }
+
+  let dynamicLoopButton = document.querySelector("#button-3");
+  dynamicLoopButton.onclick = dynamicLoop;
+</script>

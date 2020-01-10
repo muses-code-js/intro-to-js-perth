@@ -1,0 +1,124 @@
+<head>
+  <style>
+    body {
+      padding: 25px;
+      font-family: Arial, Helvetica, sans-serif
+    }
+
+    .info {
+      background-color: lightgoldenrodyellow;
+      border: 2px solid burlywood;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 5px;
+    }
+
+    /***TASK 1***/
+
+    /*  This style applies to all elements with a class of 'dotted-div'.
+        To select a class in CSS, you use a dot followed by the class name, like this: */
+    .dotted-div {
+      background-color: lightgray;
+      border: 2px dotted black;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+
+    /***TASK 2***/
+    /*  This style applies to an element with an id of "task-2".
+        To select an id in CSS, you use a '#' followed by the id name.*/
+    #task-2 {
+      /*TODO: Add new styles here*/
+    }
+
+
+    /***TASK 3***/
+    /*  This selector changes all ".info" sections on the page*/
+    .info {
+      color: black;
+    }
+
+    /*  This style applies to ".info" elements within an element with an id of "task-3"*/
+    #task-3 .info {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 1 - HTML and CSS</h1>
+  <div class="info">
+    You can add styles to HTML elements (like 'div' or 'h3') using CSS, which change how the elements are displayed on
+    the page. Elements can be given ids and classes, which allow you to select them to apply styles.
+
+    <h3>What is CSS?</h3>
+    CSS (cascading style sheets) is a way of providing styling to HTML. Think of CSS as an additional layer that goes on
+    top of HTML to make pages more interesting.
+  </div>
+
+  <div class="dotted-div">
+    <h2>Task 1: Applying styles with a class</h2>
+    Update the ".dotted-div" style to have a blue background and a green border.
+
+    <div class="info">
+      You can select a class in CSS by adding a dot before the class name, e.g. ".my-class-name" within the
+      &lt;style&gt;&lt;/style&gt; tags on the page. You can then add
+    </div>
+  </div>
+
+  <div id="task-2"
+    class="dotted-div">
+    <h2>Task 2: Applying specific styles with an ID</h2>
+    Update the "task-2" style a style that makes the background of this element green, but leaves the other elements
+    unchanged.
+    <div class="info">
+      You can apply styles to a specific element if it has an 'id' attribute. You can select this in CSS by adding a '#'
+      before the ID name, e.g.: '#my-element-name'.
+      <strong>
+        You should use a class when you're applying a style to many different elments. An element's id should be
+        unique.
+      </strong>
+    </div>
+  </div>
+
+  <div id="task-3"
+    class="dotted-div">
+    <h2>Task 3: Nested CSS Selectors</h2>
+    Update the colour of the info section below to be red. Change all info sections to be pink.
+    <div class="info">
+      You can apply styles to a specific elements and classes WITHIN another element. To apply styles to an 'info' class
+      within an element with an id of "my-id", you would use the following selector: "#my-id .info".
+    </div>
+  </div>
+
+  <div id="task-3"
+    class="dotted-div">
+    <h2>Task 4: Additional CSS styles</h2>
+    Try applying some other CSS styles to your elements, such as:
+    <ul>
+      <li>background-image: linear-gradient(25deg, #2e2edf, #6570d4, #78adc7, #75eab6)</li>
+      <li>transform: rotate(45deg)</li>
+      <li>font-size: 55px</li>
+    </ul>
+    <div class="info">
+      There are several hundred potential style properties you can apply to elements. A full list for reference can be
+      found <a href="https://www.w3schools.com/cssref/default.asp">here</a>.
+    </div>
+  </div>
+
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>When identifying elements, I know when to use a class and when to use an id.</li>
+      <li>I can apply CSS styles to HTML elements based on their classes and ids.</li>
+      <li>I can edit some CSS styles like background-color and width.</li>
+      <li>I know what comments look like in CSS.</li>
+      <li>I know where I can find more information about CSS properties.</li>
+    </ul>
+  </div>
+  </div>
+  <a href="./lesson-1.html">Previous Lesson</a> |
+  <a href="./lesson-3.html">Next Lesson </a>
+</body>

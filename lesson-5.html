@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <!--We're importing some of the generic styles from the last lesson.-->
+  <link rel="stylesheet"
+    href="./style.css">
+  </link>
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 5 - Editing HTML with JavaScript</h1>
+  <div class="dotted-div">
+    <h2>Task 1: Finding Elements on the page using JavaScript</h2>
+    <div class="info">You can find an element on the page using JavaScript, using code that looks like this:
+      <code>document.querySelector("#my-element-name")</code>. This allows you to edit your HTML page with JavaScript.
+    </div>
+    <p>Update <code>document.querySelector("#I-CANT-FIND-MY-ELEMENT")</code> to instead look for an element with the id
+      of
+      <code>#update-text</code>. When you refresh the page, the new JavaScript text should overwrite the original HTML
+      message.
+    </p>
+    <p><strong>Bonus:</strong> Update the JavaScript message to say something new, like "Hello!"</p>
+
+    <strong id="update-text">
+      This is the original HTML text. If you can still see it, it means you haven't found the
+      element successfully in JavaScript :(</strong>
+  </div>
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>
+        I can edit the <code>document.querySelector</code> in JavaScript to successfully find an element.
+      </li>
+      <li>
+        I can insert custom text into HTML using JavaScript.
+      </li>
+    </ul>
+  </div>
+  <a href="./lesson-4.html">
+    Previous Lesson
+  </a>
+  |
+  <a href="./lesson-6.html">
+    Next Lesson
+  </a>
+</body>
+
+</html>
+
+<script>
+  /*** TASK 1 ***/
+  //TODO: Update "#I-CANT-FIND-MY-ELEMENT" to be the name of the element you want to update.
+  document.querySelector("#I-CANT-FIND-MY-ELEMENT").innerHTML = "This text was set with JavaScript!";
+
+</script>

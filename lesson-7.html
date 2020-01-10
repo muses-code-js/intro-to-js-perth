@@ -1,0 +1,145 @@
+<html>
+
+<head>
+  <!--We're importing some of the generic styles from the last lesson.-->
+  <link rel="stylesheet"
+    href="./style.css">
+  </link>
+
+  <style>
+    #racetrack {
+      position: relative;
+      width: 100%;
+      height: 36px;
+      background-color: hsl(0, 0%, 50%);
+      margin-top: 20px;
+    }
+
+    #car {
+      position: absolute;
+      font-size: 36px;
+      left: 0;
+      bottom: 0;
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 7 - Variables</h1>
+  <p>A variable represents a value (like a number or a word) that can change over time. </p>
+  <div class="dotted-div"
+    id="task-1">
+    <h2>Task 2: Updating a variable</h2>
+    <div class="info">A variable is a value that can change. </div>
+    <p> The 'counter' variable is changed by the 'plus' button </p>
+    <p>Update the <code>minus()</code> function so that it subtracts from the counter variable, and moves the car
+      backwards on the
+      racetrack.</p>
+    <button id="plus">PLUS +</button><button id="minus">MINUS -</button>
+    <div id="racetrack">
+      <span id="car">🚗</span>
+    </div>
+  </div>
+
+  <div class="dotted-div"
+    id="task-2">
+    <h2>Task 2: Storing different types of values</h2>
+    <div class="info">Variables can store numbers, words and true/false values.</div>
+    <p>You can store different kinds of values in a variable. The 'color' variable in task 2 stores a color the user has
+      inputted. Can you update the <code>changeColor()</code> function so that the newly selected color becomes the
+      background color?
+    </p>
+    <input type="color"
+      id="color-picker"></input>
+    <button id="button-2">Change Colour</button>
+  </div>
+
+
+  <div class="dotted-div"
+    id="task-3">
+    <h2>Task 3: Arrays</h2>
+    <div class="info">
+      An array stores a list of values. You can access items in the list by their index like this, "myList[0]" for the
+      first item, "myList[1]" for the second item and so on.
+    </div>
+    <p>For this task, update the 'shoppingList' value to include 'apples' and 'pears'. Update the
+      <code>document.querySelector("#first-item").innerHTML</code> so that it sucessfully prints the first item in the
+      list (currently it prints the second item).</code></p>
+    <p>Shopping List Total: <strong id="shopping-total"></strong></p>
+    <span id="shopping-list"></span>
+    <h5>The first item is: <span id="first-item"></span></h5>
+    <button id="button-3">Print my shopping list</button>
+  </div>
+
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>
+        I understand what a variable is.
+      </li>
+      <li>
+        I can use a variable to store different things, like numbers or colours.
+      </li>
+      <li>
+        I know what an array is, and can alter code to add more elements to an array.
+      </li>
+      <li>
+        I know how to access an item in an array using an index value.
+      </li>
+    </ul>
+  </div>
+
+  <a href="./lesson-6.html">
+    Previous Lesson
+  </a>
+  |
+  <a href="./lesson-8.html">
+    Next Lesson
+  </a>
+</body>
+
+<script>
+  /*** TASK 1 ***/
+  let counter = 0;
+  let car = document.querySelector("#car");
+  function plus() {
+    counter = counter + 1;
+    car.style.left = counter * 50;
+  }
+
+  function minus() {
+    //TODO : make the minus function subtract 1 and then update the counter element. 
+  }
+
+  document.querySelector("#plus").onclick = plus;
+  document.querySelector("#minus").onclick = minus;
+
+  /*** TASK 2 ***/
+  function changeColor() {
+    let color = document.querySelector("#color-picker").value;
+    //TODO: Update this to set the color to our new color variable. 
+    document.querySelector("#task-2").style.backgroundColor = 'white';
+  }
+
+  document.querySelector("#button-2").onclick = changeColor;
+
+
+  /*** TASK 3 ***/
+  //TODO: Add some more items to your shopping list. 
+  let shoppingList = ["milk", "eggs"];
+  function printShoppingList() {
+    document.querySelector("#shopping-total").innerHTML = shoppingList.length;
+
+    //TODO: Update this text to display the first item in the list.
+    document.querySelector("#first-item").innerHTML = shoppingList[1];
+    document.querySelector("#shopping-list").innerHTML = shoppingList;
+  }
+
+  document.querySelector("#button-3").onclick = printShoppingList;
+
+</script>
+
+</html>

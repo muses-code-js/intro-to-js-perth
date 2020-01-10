@@ -1,0 +1,116 @@
+<html>
+
+<head>
+  <link rel="stylesheet"
+    href="./style.css">
+  </link>
+  <style>
+    #bug {
+      position: absolute;
+      transition: linear 0.3s all;
+      transform-origin: 50% 50%;
+      font-size: 45px;
+    }
+
+    #web {
+      position: absolute;
+      font-size: 90px;
+    }
+
+    #flower {
+      font-size: 45px;
+      position: absolute;
+    }
+
+    .wrapper {
+      background-image: linear-gradient(0deg, #3b5236, #476839, #547f3c, #60963e);
+      position: relative;
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 11 - Web Development</h1>
+  <div class="dotted-div">
+    <h2>Task 1: Lady Bug</h2>
+    <p>Can you recreate the functions from the last lesson, but this time, connect them to the up/down/left/right arrow
+      keys on your keyboard?</p>
+    <p>The "down" function has already been completed for you.</p>
+
+    <h3>Bonus Task: Add a "you win!" popup if the ladybug gets to the flower. Add a 'game over' popup if the ladybug
+      bumps into the web.</h3>
+  </div>
+
+  <div class="wrapper">
+    <div id="bug">🐞</div>
+    <div id="flower">🌸</div>
+    <div id="web">🕸</div>
+  </div>
+
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>
+        I can connect functions to keystrokes (e.g.: up, down, left, right).
+      </li>
+      <li>
+        I use JavaScript to manipulate HTML.
+      </li>
+      <li>
+        I can create more complicated if statements which depend on different variables.
+      </li>
+    </ul>
+  </div>
+  <a href="./lesson-10.html">Previous Lesson</a>
+  |
+  <a href="./whats-next.html">What's next?
+</body>
+
+<script>
+  let x = 0;
+  let y = 0;
+
+  let bug = document.querySelector("#bug");
+
+  function moveDown() {
+    y += 10;
+    bug.style.top = y;
+    bug.style.transform = "rotate(180deg)";
+  }
+  //TODO: Repeat these steps for the #up, #left and #right buttons
+
+  function keypress(e) {
+    if (e.code == "ArrowDown") {
+      moveDown();
+    } else if (e.code == "ArrowUp") {
+      //TODO
+    } else if (e.code == "ArrowLeft") {
+      //TODO
+    } else if (e.code == "ArrowRight") {
+      //TODO
+    }
+  }
+
+  document.onkeydown = keypress;
+
+  //TODO (Bonus): Can you add code to see if the ladybug has bumped into the flower or the web?
+  let flowerX = 150;
+  let flowerY = 150;
+  let score = 0;
+  let flower = document.querySelector("#flower");
+  flower.style.top = flowerY;
+  flower.style.left = flowerX;
+
+  let webX = 400;
+  let webY = 350;
+  let web = document.querySelector("#web");
+  web.style.top = webY;
+  web.style.left = webX;
+
+</script>
+
+</html>

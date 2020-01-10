@@ -1,0 +1,75 @@
+<head>
+  <link rel="stylesheet"
+    href="./style.css">
+  </style>
+
+  <style>
+    #spaceship {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      transition: linear 0.3s all;
+      font-size: 45px;
+      left: 0;
+      top: 0;
+    }
+
+    .wrapper {
+      background-image: linear-gradient(25deg, #e06c7f, #c285a4, #969bc9, #39aef0);
+      position: relative;
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 10 - Spaceship</h1>
+  <div class="dotted-div">
+    <h2>Task 1: Piloting a spaceship</h2>
+    <p>Update the following buttons to pilot the spaceship. (The 'down' button already works!) </p>
+    <button id="down">Down</button>
+    <button id="up">Up</button>
+    <button id="left">Left</button>
+    <button id="right">Right</button>
+  </div>
+
+  <div class="wrapper">
+    <div id="spaceship">🛸</div>
+  </div>
+
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>
+        I can connect functions to buttons.
+      </li>
+      <li>
+        I can create new functions.
+      </li>
+      <li>
+        I can use JavaScript to manipulate HTML.
+      </li>
+    </ul>
+  </div>
+  <a href="./lesson-9.html">Previous Lesson</a>
+  |
+  <a href="./lesson-11.html">Next Lesson
+</body>
+
+<script>
+  let x = 0;
+  let y = 0;
+
+  let spaceship = document.querySelector("#spaceship");
+
+  function moveDown() {
+    y = y + 15;
+    spaceship.style.top = y;
+  }
+
+  document.querySelector("#down").onclick = moveDown;
+
+</script>

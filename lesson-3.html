@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <!--We're importing some of the generic styles from the last lesson.-->
+  <link rel="stylesheet"
+    href="./style.css">
+  </style>
+  <style>
+    /***TASK 1***/
+    #task-1 {
+      width: 50%;
+      transition-duration: 0.3s;
+    }
+
+    /*  This style applies when you hover over an element with an id of "task-1"*/
+    #task-1:hover {
+      width: 60%;
+    }
+
+    /***TASK 2***/
+    .animated-div {
+      animation-name: my-first-animation;
+      /*TODO: Update animation duration to 10s (10 seconds)*/
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes my-first-animation {
+      from {
+        transform: rotate(-10deg);
+      }
+
+      to {
+        transform: rotate(10deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 3 - Interactive CSS</h1>
+  <div class="info">
+    <p>You can use CSS to make elements slightly interactive, like changing colour when the user hovers over them</p>
+  </div>
+
+  <div id="task-1"
+    class="dotted-div">
+    <h2>Task 1: Applying 'hover' styles</h2>
+    <ul>
+      <li>
+        Update this div so that it has a width of 100% when the mouse hovers over it ("#task-1:hover").
+      </li>
+      <li>
+        Add a new 'background-color' style to the hover style.
+      </li>
+      <li>
+        Change the 'transition-duration' time from 0.3 seconds to 10 second and see what effect it has.
+      </li>
+    </ul>
+    <div class="info">
+      You can apply styles to elements which only apply at certain times. For example, if you add ":hover" at the end of
+      a selector, those styles will only apply when you hover over an element.
+    </div>
+  </div>
+  <div class="dotted-div">
+    <h2>Task 2: Applying simple animation</h2>
+    <p>Update this div so it has an additional class, "animated-div". This will apply an existing animation to this
+      element</p>
+    <p>Edit the animation so it repeats every 10 seconds, rather than every 2 seconds.</p>
+
+    <div class="info">
+      You can apply multiple classes to one element. Seperate the list of class names with spaces, e.g.: "class-name-1
+      class-2"
+    </div>
+  </div>
+
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>I can apply different styles to elements when I hover over them.</li>
+      <li>I can add new classes to existing elements.</li>
+      <li>I can edit some features of an animation, like it's duration.</li>
+    </ul>
+  </div>
+  <a href="./lesson-2.html">Previous</a> | <a href="./lesson-4.html">Next</a>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<html>
+
+<head>
+  <!--We're importing some of the generic styles from the last lesson.-->
+  <link rel="stylesheet"
+    href="./style.css">
+  </style>
+  <style>
+    #racetrack {
+      position: relative;
+      width: 250px;
+      border-right: 5px solid black;
+      height: 36px;
+      background-color: hsl(0, 0%, 50%);
+      margin-top: 25px;
+    }
+
+    #car {
+      position: absolute;
+      font-size: 36px;
+      left: 0;
+      bottom: 0;
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Lesson 9 - If Statements</h1>
+  <div class="info">
+    An 'if' statment checks if something's true or false.
+  </div>
+  <div class="dotted-div">
+    <h2>Task 1: If Statements</h2>
+    <div class="info">An if statement checks if something is true or false, and does different actions based on that.
+    </div>
+    <p>Update the <code>ifStatement()</code> function so that it's true.</p>
+    <button id="button-1">Run the if statement</button>
+  </div>
+  <div class="dotted-div">
+    <h2>Task 2: If statments based on variables/input</h2>
+    <div class="info">You can use code like this
+      <code>document.querySelector("#my-element").innerHTML = 'example'</code> to
+      update content on a webpage.</div>
+    <p>Update the function </p>
+    <input type="checkbox"
+      id="my-checkbox">Has the checkbox been checked? </input>
+    <p>Update the evaluateCheckbox if statement so that it returns true when the checkbox has been checked. Currently,
+      it's always true.</p>
+    <p id="update-text"></p>
+    <button id="button-2">Has the checkbox been checked?</button>
+  </div>
+  <div class="dotted-div"
+    id="task-3">
+    <h2>Task 3: Evaluate less than</h2>
+    <div class="info">If statements can evaluated greater than and less than, as well as whether two things are equal.
+    </div>
+    <p>Currently, the finish line has been set to 25 pixels. Actually, the road is 250 pixels long. Can you update the
+      if statement
+      so sees 'you finished!' when the car is over the finish line of 250 pixels?</p>
+    <button id="move-car-button">Drive Car</button>
+    <div id="racetrack">
+      <span id="car">🚗</span>
+    </div>
+  </div>
+
+  <div class="key-takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>
+        I understand what an if statement is.
+      </li>
+      <li>
+        I can use a variable to change the result of an if statement.
+      </li>
+      <li>
+        I know how to compare numbers in a if statement, e.g.: is 'x' less than 'y'
+      </li>
+    </ul>
+  </div>
+  <a href="./lesson-8.html">Previous Lesson</a>
+  |
+  <a href="./lesson-10.html">Next Lesson>
+  </a>
+</body>
+
+<script>
+  /*** TASK 1 ***/
+  function ifStatement() {
+    /*TODO: Update the if statement so it's true'*/
+    if (1 + 1 == 3) {
+      alert("The statement is true!")
+    } else {
+      alert("The statement is false. Can you update it so it's true?")
+    }
+  }
+  document.querySelector("#button-1").onclick = ifStatement;
+
+
+
+  /*** TODO: TASK 2 ***/
+  function evaluateCheckbox() {
+    let checkboxValue = document.querySelector("#my-checkbox").value;
+    //TODO: Update the 'if' statement to use checkbox value instead of always being true.
+    if (true) {
+      alert("The checkbox is checked!");
+    } else {
+      alert("The checkbox hasn't been checked!");
+    }
+  }
+
+  document.querySelector("#button-2").onclick = evaluateCheckbox;
+
+
+  let distance = 0;
+  function evalutateLessThan() {
+    distance = distance + 40;
+    document.querySelector("#car").style.left = distance;
+
+    //TODO: update the if statement so it checks for a finish line greater than 250
+    //rather than 25
+    if (distance > 25) {
+      alert("You finished the race!");
+    }
+  }
+
+  document.querySelector("#move-car-button").onclick = evalutateLessThan;
+</script>
+
+</html>

@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <link rel="stylesheet"
+    href="./style.css">
+  </link>
+  <style>
+    #trex {
+      font-size: 70px;
+      position: absolute;
+    }
+
+
+    #scientist {
+      font-size: 45px;
+      position: absolute;
+    }
+
+    .wrapper {
+      background-image: linear-gradient(0deg, #3b5236, #476839, #547f3c, #60963e);
+      position: relative;
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="./index.html">Home</a>
+  <h1>Jurassic Park</h1>
+  <div class="dotted-div">
+    <h2>Task: Complete the Game</h2>
+    <p>There are some features to add to this game before it's finished.</p>
+    <ul>
+      <li>Make the scientist move around the park so she can escape the t-rex</li>
+      <li>Make something happen when the scientist and the t-rex bump in to one another</li>
+      <li>Make sure the t-rex doesn't leave the park - maybe she should change direction if she's too close to the edge?
+      </li>
+    </ul>
+    <p>Feel free to add some bonus features to the game, such as:</p>
+    <ul>
+      <li>Give the scientist multiple lives</li>
+      <li>Maybe create a helicopter the scientist can escape to</li>
+      <li>Can you create multiple dinosaurs?</li>
+    </ul>
+  </div>
+
+  <div class="wrapper">
+    <div id="trex">🦖</div>
+    <div id="scientist">👩‍🔬</div>
+  </div>
+
+</body>
+
+</html>
+
+
+
+<script>
+  // TODO: Make the scientist respond to up/down/left/right keystrokes. 
+
+  // TODO: Make something happen when the scientist bumps into the t-rex. (But what!)
+
+  let trex = document.querySelector("#trex");
+  let dinoX = 0;
+  let dinoY = 0;
+
+  xSpeed = 1;
+  ySpeed = 1;
+
+  function moveTrex() {
+    // The T-REX will only change direction 1% of the time - you can make her
+    // change direction more often if you want. 
+    if (Math.random() > 0.99) {
+      xSpeed = xSpeed * -1;
+    }
+
+    if (Math.random() > 0.99) {
+      ySpeed = ySpeed * -1;
+    }
+
+    // TODO: Make the t-rex stay within the bounds of the park. 
+    // Maybe she should change direction if she is too close to the edge?
+
+    dinoX += xSpeed;
+    dinoY += ySpeed;
+    trex.style.top = dinoX;
+    trex.style.left = dinoY;
+  }
+
+  setInterval(moveTrex, 20);
+
+
+</script>
